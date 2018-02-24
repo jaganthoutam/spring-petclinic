@@ -12,11 +12,11 @@ pipeline {
       steps {
         sh 'mvn clean install'
       }
-    } 
-stage('Docker build') {
- agent any
- step {
-  sh 'docker build -t shanem/spring-petclinic:latest .'
+    }
+    stage('Docker Build') {
+      agent any
+      steps {
+        sh 'docker build -t shanem/spring-petclinic:latest .'
       }
     }
   }
